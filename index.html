@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="page active">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p class="error" id="loginError"></p>
+    <p>Don't have an account? <button id="showRegister">Register here</button></p>
+  </div>
+
+  <!-- REGISTER PAGE -->
+  <div id="registerPage" class="page">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <input type="text" id="registerUsername" placeholder="Username" required />
+      <input type="email" id="registerEmail" placeholder="Email" required />
+      <input type="password" id="registerPassword" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+    <p class="error" id="registerError"></p>
+    <p class="success" id="registerSuccess"></p>
+    <p>Already have an account? <button id="showLogin">Login here</button></p>
+  </div>
+
+  <!-- HOME PAGE -->
+  <div id="homePage" class="page">
+    <h2>Welcome, <span id="displayUsername"></span></h2>
+    <h3>Select a Subject</h3>
+    <div id="subjectButtons" class="subjects">
+      <button class="subjectBtn" data-subject="math">Mathematics</button>
+      <button class="subjectBtn" data-subject="science">Science</button>
+      <button class="subjectBtn" data-subject="english">English</button>
+      <button class="subjectBtn" data-subject="history">History</button>
+      <button class="subjectBtn" data-subject="gk">General Knowledge</button>
+    </div>
+    <button id="logoutBtn" class="logoutBtn">Logout</button>
+  </div>
+
+  <!-- QUIZ PAGE -->
+  <div id="quizPage" class="page">
+    <h2>Subject: <span id="quizSubjectTitle"></span></h2>
+    <p id="timer">Time Left: 30s</p>
+    <p id="scoreDisplay">Score: 0</p>
+    <div id="questionText" class="question"></div>
+    <div id="optionsContainer" class="options"></div>
+    <div class="quizButtons">
+      <button id="nextQuestionBtn" disabled>Next Question</button>
+      <button id="returnSubjectsBtn">Return to Subjects</button>
+    </div>
+  </div>
+
+  <!-- RESULT PAGE -->
+  <div id="resultPage" class="page">
+    <h2>Quiz Completed!</h2>
+    <p>Your Score: <span id="finalScore"></span> / <span id="totalQuestions"></span></p>
+    <button id="returnHomeBtn">Return to Home</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
